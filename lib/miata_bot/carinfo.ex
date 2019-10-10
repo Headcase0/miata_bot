@@ -14,7 +14,7 @@ defmodule MiataBot.Carinfo do
   def changeset(carinfo, params \\ %{}) do
     carinfo
     |> cast(params, [:year, :color, :color_code, :title, :image_url, :discord_user_id])
-    |> validate_inclusion(:year, 1989..2020)
+    |> validate_inclusion(:year, 1989..2099)
     |> unique_constraint(:discord_user_id)
   end
 end
